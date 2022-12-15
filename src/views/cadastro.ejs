@@ -32,21 +32,23 @@
                       <small id="emailHelp" class="form-text text-muted">Após digitar o endereço, porfavor use a '',''
                         para informar o número da residência.</small>
                     </div>
+
+                    
                   
-                    <select  id="alter" value="<%= cadId.alter %>" class="form-control form-control form-select w-50" aria-label=""
+                    <select id="alter" value="<%= cadId.alter %>" class="form-control form-control form-select w-50" aria-label=""
                       name="alter" aria-selected="true">
                       <option value="Desarquivamento">Desarquivamento</option>
                       <option selected value="Pesquisa">Pesquisa de Planta</option>
                     </select>
 
+                    <div class="form-group my-3">
+                      <label>Numero do processo</label>
+                      <input value="<%= cadId.nprocesso %>" type="text" class="form-control" name="nprocesso">
+                    </div>
 
-                        <div id="npDiv" class="form-group my-3">
-                          <label>Numero do processo</label>
-                          <input value="<%= cadId.nprocesso %>" type="text" class="form-control" name="nprocesso" id="nprocesso">
-                        </div>
 
-                        
- 
+
+
                       <select value="<%= cadId.situacao %>" class="form-control form-select w-50" name="situacao" id="sit">
                         <option value="Em Pesquisa">Em pesquisa</option>
                         <option value="Localizado">Localizado</option>

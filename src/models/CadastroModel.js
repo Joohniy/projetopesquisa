@@ -46,6 +46,23 @@ class Cadastro {
     async edit(id) {
         this.cadastradas = await CadastroModel.findByIdAndUpdate(id, this.body, { new: true })
     }
+    
+    alteraInput() {
+        const iptHab = document.getElementById('npHab');
+        const iptDes = document.getElementById('npDes');
+        
+        if(this.body.alter === 'Desarquivamento') {
+            iptHab.style.setProperty('display','block');
+            iptDes.style.setProperty('display','none');
+        }
+        
+        if(this.body.alter === 'Pesquisa') {
+            iptHab.style.setProperty('display','none');
+            iptDes.style.setProperty('display','block');
+        }
+    }
 }
+
+
 
 module.exports = Cadastro;
