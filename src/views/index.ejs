@@ -1,0 +1,66 @@
+<%- include('./includes/head.ejs')%>
+    <%- include('./includes/nav.ejs')%>
+
+        <div class="container">
+            <div class="row">
+                <div class="col lg-2"></div>
+
+                <div class="col lg-8 my-3">
+                    <h1 class="text-center">Pesquisas cadastradas</h1>
+                    <p class="text-center lead">Consulte ou edite as pesquisas</p>
+
+                    <div class="responsive-table">
+                        <table class="table table-bordered table-striped my-3">
+                            <td>
+                                <h5>Nome</h5>
+                            </td>
+                            <td>
+                                <h5>Endereco</h5>
+                            </td>
+                            <td>
+                                <h5>Nº do Processo</h5>
+                            </td>
+                            <td>
+                                <h5>Tipo de requer</h5>
+                            </td>
+                            <td>
+                                <h5>Definir situação</h5>
+                            </td>
+                            <td>
+                                <h5>Situação</h5>
+
+                            </td>
+                            <% cadastradas.forEach(cadastrada => { %> <%# aqui fiz o forEach pq retorna um array no model
+                                    cadastradas %>
+                                    <tr>
+                                        <td>
+                                            <%= cadastrada.nome %>
+                                        </td>
+                                        <td>
+                                            <%= cadastrada.endereco %>
+                                        </td>
+                                        <td class="text-center">
+                                            <%= cadastrada.nprocesso %>
+                                        </td>
+                                        <td>
+                                            <%= cadastrada.alter %>
+                                        </td>
+                                        <td>
+                                                <a href="/cadastro/<%= cadastrada._id %>">Alterar</a>
+                                        </td>
+                                        <td>
+                                            <%= cadastrada.situacao %>
+                                        </td>
+                                        <% }) %>
+                                    </tr>
+                        </table>
+                    </div>
+
+                </div>
+
+
+                <div class="col lg-2"></div>
+            </div>
+        </div>
+
+        <%- include('./includes/footer.ejs')%>
