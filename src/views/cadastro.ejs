@@ -33,59 +33,66 @@
                         para informar o número da residência.</small>
                     </div>
 
-                  
-                    <select id="alter" value="<%= cadId.alter %>" class="form-control form-control form-select w-50" aria-label=""
-                      name="alter" aria-selected="true">
+
+                    <select id="alter" value="<%= cadId.alter %>" class="form-control form-control form-select w-50"
+                      aria-label="" name="alter" aria-selected="true">
                       <option selected hidden value="tipRequer">Tipo de requerimento</option>
                       <option id="des" value="Desarquivamento">Desarquivamento</option>
                       <option id="pesq" value="Pesquisa">Pesquisa de Planta</option>
                     </select>
-                    
+
                     <div id="dpDiv" class="form-group my-3">
                       <label>Numero do processo</label>
                       <input value="<%= cadId.nprocesso %>" type="text" class="form-control" name="nprocesso">
                     </div>
 
                     <script>
-                      $(document).ready(function() { 
-                        $('#dpDiv').hide(); 
-                        $('#alter').change(function(){
-                          if($('#alter').val() === 'Pesquisa') { 
+                      $(document).ready(function () {
+                        $('#dpDiv').hide();
+                        $('#alter').change(function () {
+                          if ($('#alter').val() === 'Pesquisa') {
                             $('#dpDiv').hide();
                             $('#sit').show();
-                           } 
+                          }
 
-                          if($('#alter').val() === 'Desarquivamento') { 
+                          if ($('#alter').val() === 'Desarquivamento') {
                             $('#dpDiv').show();
                             $('#sit').hide();
-                           }
+                          }
                         })
                       })
-                      </script>      
+                    </script>
+
+                    <script>
+                      $(document).ready(function () {
+                        $('#sit').hide()
+                      })
+                    </script>
 
 
-                      <select value="<%= cadId.situacao %>" class="form-control form-select w-50 my-3" name="situacao" id="sit">
-                        <option selected hidden value="Selecione">Defina a situação da pesquisa</option>
-                        <option value="Em Pesquisa">Em pesquisa</option>
-                        <option value="Localizado">Localizado</option>
-                        <option value="Aguardando Arquivo">Ag. Arquivo</option>
-                        <option value="Enviado pra arquivo">Enviado pra arquivo</option>
-                        <option value="Nada consta">Nada consta</option>
-                        <option value="Finalizado">Finalizado</option>
-                      </select>
+                    <select value="<%= cadId.situacao %>" class="form-control form-select w-50 my-3" name="situacao"
+                      id="sit">
+                      <option selected hidden value="Selecione">Defina a situação da pesquisa</option>
+                      <option value="Em Pesquisa">Em pesquisa</option>
+                      <option value="Localizado">Localizado</option>
+                      <option value="Aguardando Arquivo">Ag. Arquivo</option>
+                      <option value="Enviado pra arquivo">Enviado pra arquivo</option>
+                      <option value="Nada consta">Nada consta</option>
+                      <option value="Finalizado">Finalizado</option>
+                    </select>
 
-                      <script>
-                        $(document).ready(function(){
-                          $('#dpDiv').hide();
-                          $('#sit').change(function(){
-                            if($('#sit').val() === 'Localizado') { $('#dpDiv').show() }
-                          })
+                    <script>
+                      $(document).ready(function () {
+                        $('#dpDiv').hide();
+                        $('#sit').change(function () {
+                          if ($('#sit').val() === 'Localizado') { $('#dpDiv').show() }
                         })
-                      </script>
+                      })
+                    </script>
 
 
 
-                      <button type="submit" class="btn btn-outline-success my-3">Enviar</button>
+                    <button type="submit" class="btn btn-outline-success my-3">Enviar</button>
               </form>
     </div>
 
