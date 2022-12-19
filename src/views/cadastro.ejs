@@ -33,23 +33,37 @@
                         para informar o número da residência.</small>
                     </div>
 
-                    
+              
+
+
+
                   
                     <select id="alter" value="<%= cadId.alter %>" class="form-control form-control form-select w-50" aria-label=""
                       name="alter" aria-selected="true">
-                      <option value="Desarquivamento">Desarquivamento</option>
-                      <option selected value="Pesquisa">Pesquisa de Planta</option>
+                      <option selected hidden value="tipRequer">Tipo de requerimento</option>
+                      <option id="des" value="Desarquivamento">Desarquivamento</option>
+                      <option id="pesq" value="Pesquisa">Pesquisa de Planta</option>
                     </select>
-
-                    <div class="form-group my-3">
+                    
+                    <div id="exibe" class="form-group my-3">
                       <label>Numero do processo</label>
                       <input value="<%= cadId.nprocesso %>" type="text" class="form-control" name="nprocesso">
                     </div>
 
+                    <script>
+                      $(document).ready(function() { 
+                        $('#exibe').hide(); 
+                        $('#alter').change(function(){
+                          if($('#alter').val() === 'Pesquisa') { $('#exibe').hide() }
+                          if($('#alter').val() === 'Desarquivamento') { $('#exibe').show() }
+                        })
+                      })
+                      </script>      
 
 
 
-                      <select value="<%= cadId.situacao %>" class="form-control form-select w-50" name="situacao" id="sit">
+                      <select value="<%= cadId.situacao %>" class="form-control form-select w-50 my-3" name="situacao" id="sit">
+                        <option selected hidden value="Selecione">Defina a situação da pesquisa</option>
                         <option value="Em Pesquisa">Em pesquisa</option>
                         <option value="Localizado">Localizado</option>
                         <option value="Aguardando Arquivo">Ag. Arquivo</option>

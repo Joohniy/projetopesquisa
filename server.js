@@ -12,16 +12,17 @@ const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
 const routes = require('./routes');
 const path = require('path');
-const helmet = require('helmet');
 const csrf = require('csurf');
 const { middlewareGlobal, checkCsrfError, csrfMidd } = require('./src/middleware/middleware');
 
 
-app.use(helmet());
 
 app.use(express.urlencoded(  {extended: true}  ));
 app.use(express.json());
 app.use(express.static(path.resolve(__dirname, 'public')));
+
+
+
 
 const sessionOptions = session({
     secret: 'abcdefghijklmnopqrstuwxyz',
