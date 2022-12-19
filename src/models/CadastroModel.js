@@ -34,7 +34,6 @@ class Cadastro {
         this.valida()
         if(this.errors.length > 0) return;
         this.cadastradas = await CadastroModel.create(this.body) //.create() - cria o this.body na base de dados    
-        console.log(this.errors)
     }
 
     static async buscaCadastro() {
