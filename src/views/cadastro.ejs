@@ -22,6 +22,10 @@
                   <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                   <%# tem q usar o name _csrf e o value csrfToken%>
                     <div class="form-group">
+                      <label>Nº Pesquisa</label>
+                      <input value="<%= cadId.num %>" type="text" class="form-control w-5" name="num">
+                    </div>
+                    <div class="form-group">
                       <label>Nome</label>
                       <input value="<%= cadId.nome %>" type="text" class="form-control" name="nome">
                     </div>
@@ -53,20 +57,20 @@
                           if ($('#alter').val() === 'Pesquisa') {
                             $('#dpDiv').hide();
                             $('#sit').show();
-                          }
+                          };
 
                           if ($('#alter').val() === 'Desarquivamento') {
                             $('#dpDiv').show();
                             $('#sit').hide();
-                          }
-                        })
-                      })
+                          };
+                        });
+                      });
                     </script>
 
                     <script>
-                      $(document).ready(function () {
-                        $('#sit').hide()
-                      })
+                      $(document).ready(function() {
+                        $('#sit').hide();
+                      });
                     </script>
 
 
@@ -85,9 +89,13 @@
                       $(document).ready(function () {
                         $('#dpDiv').hide();
                         $('#sit').change(function () {
-                          if ($('#sit').val() === 'Localizado') { $('#dpDiv').show() }
-                        })
-                      })
+                          if ($('#sit').val() === 'Localizado') { 
+                            $('#dpDiv').show();
+                           } else {
+                            $('#dpDiv').hide();
+                           };
+                        });
+                      });
                     </script>
 
 

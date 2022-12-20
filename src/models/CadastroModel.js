@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const CadastroSchema = new mongoose.Schema({
+    num: { type: Number, required: true, default: 1 },
     nome: { type: String, required: true },
     endereco: { type: String, required: true },
     nprocesso: { type: String, required: false, default: '---' },
@@ -21,6 +22,9 @@ class Cadastro {
     valida() {
         if(!this.body.endereco) {
             this.errors.push('O campo de endereco é obrigatório')
+        }
+        if(!this.body.num) {
+            this.errors.push('Certifique-se de digitar o nº da pesquisa.')
         }
     }
 

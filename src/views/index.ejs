@@ -12,6 +12,9 @@
                     <div class="responsive-table">
                         <table class="table table-bordered table-striped my-3">
                             <td>
+                                <h5>Nº</h5>
+                            </td>
+                            <td>
                                 <h5>Nome</h5>
                             </td>
                             <td>
@@ -33,6 +36,8 @@
                             <% cadastradas.forEach(cadastrada => { %> <%# aqui fiz o forEach pq retorna um array no model
                                     cadastradas %>
                                     <tr>
+                                        <td>                                    
+                                            <%= cadastrada.num %>
                                         <td>
                                             <%= cadastrada.nome %>
                                         </td>
