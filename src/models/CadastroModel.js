@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
 const CadastroSchema = new mongoose.Schema({
-    num: { type: Number, required: true, default: 1 },
+    num: { type: Number, required: true },
     nome: { type: String, required: true },
     endereco: { type: String, required: true },
-    nprocesso: { type: String, required: false, default: '---' },
+    nprocesso: { type: String, required: false, default: 'Nenhum processo' },
     alter: { type: String, required: true },
     situacao: { type: String, required: false },
     criadoEm: { type: Date, default: Date.now }
@@ -21,10 +21,13 @@ class Cadastro {
 
     valida() {
         if(!this.body.endereco) {
-            this.errors.push('O campo de endereco é obrigatório')
+            this.errors.push('O campo de endereço é obrigatório.')
         }
         if(!this.body.num) {
             this.errors.push('Certifique-se de digitar o nº da pesquisa.')
+        }
+        if(this.body.situacao === 'Selecione') {
+            this.errors.push('Selecione o tipo de requerimento.')
         }
     }
 
@@ -47,6 +50,7 @@ class Cadastro {
     }
 
     async edit(id) {
+        this.valida()
         this.cadastradas = await CadastroModel.findByIdAndUpdate(id, this.body, { new: true })
     }
 }
