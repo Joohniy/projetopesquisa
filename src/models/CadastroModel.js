@@ -19,15 +19,13 @@ class Cadastro {
         this.cadastradas = null;
     }
 
-    valida() {
+    valida() {     
         if(!this.body.endereco) {
             this.errors.push('O campo de endereço é obrigatório.')
         }
+
         if(!this.body.num) {
             this.errors.push('Certifique-se de digitar o nº da pesquisa.')
-        }
-        if(this.body.situacao === 'Selecione') {
-            this.errors.push('Selecione o tipo de requerimento.')
         }
     }
 

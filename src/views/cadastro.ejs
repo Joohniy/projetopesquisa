@@ -5,14 +5,16 @@
       <div class="row">
         <div class="col lg-2"></div>
 
+
         <div class="col lg-8 my-3">
           <h1 class="text-center">Cadastre a pesquisa</h1>
         </div>
-
         <div class="col lg-2"></div>
       </div>
 
+
       <%- include('./includes/messages.ejs')%>
+
 
         <% if (cadId._id) { %>
           <form action="/cadastro/edit/<%= cadId._id%>" method="post">
@@ -30,6 +32,7 @@
                       <input value="<%= cadId.nome %>" type="text" class="form-control" name="nome">
                     </div>
 
+
                     <div class="form-group">
                       <label>Endereço do imóvel a ser pesquisado</label>
                       <input value="<%= cadId.endereco %>" type="text" class="form-control" name="endereco">
@@ -45,10 +48,12 @@
                       <option id="pesq" value="Pesquisa">Pesquisa de Planta</option>
                     </select>
 
+
                     <div id="dpDiv" class="form-group my-3">
                       <label>Numero do processo</label>
                       <input value="<%= cadId.nprocesso %>" type="text" class="form-control" name="nprocesso">
                     </div>
+
 
                     <script>
                       $(document).ready(function () {
@@ -66,6 +71,7 @@
                         });
                       });
                     </script>
+
 
                     <script>
                       $(document).ready(function() {
@@ -85,6 +91,7 @@
                       <option class="text-success" value="Finalizado">Finalizado</option>
                     </select>
 
+
                     <script>
                       $(document).ready(function () {
                         $('#dpDiv').hide();
@@ -99,10 +106,9 @@
                     </script>
 
 
-
                     <button type="submit" class="btn btn-outline-success my-3">Enviar</button>
               </form>
-    </div>
+      </div>
 
 
 

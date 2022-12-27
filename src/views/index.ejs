@@ -41,26 +41,26 @@
                                 cadastradas %>
                                 <tr>
                                     <td>                                    
-                                        <%= cadastrada.num %>
+                                            <h5 class="text-dark"><%= cadastrada.num %></h5>
                                         <td>
-                                            <%= cadastrada.nome %>
+                                            <h5><%= cadastrada.nome %></h5>
                                         </td>
                                         <td>
-                                            <%= cadastrada.endereco %>
+                                            <h5><%= cadastrada.endereco %></h5>
                                         </td>
                                         <td class="text-center">
-                                            <%= cadastrada.nprocesso %>
+                                            <h5><%= cadastrada.nprocesso %></h5>
                                         </td>
                                         <td>
-                                            <%= cadastrada.alter %>
-                                        </td>
-                                        
-                                        <td>
-                                            <%= cadastrada.situacao %>
+                                            <h5><%= cadastrada.alter %></h5>
                                         </td>
                                         
                                         <td>
-                                            <a class="text-info" href="/cadastro/<%= cadastrada._id %>">Alterar</a>
+                                            <h5><%= cadastrada.situacao %></h5>
+                                        </td>
+                                        
+                                        <td>
+                                            <h5><a class="text-info" href="/cadastro/<%= cadastrada._id %>">Alterar</a></h5>
                                         </td>
                                         <% }) %>
                                     </tr>
